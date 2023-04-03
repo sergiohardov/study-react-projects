@@ -5,8 +5,7 @@ const EmployeersListItem = (props) => {
     name,
     salary,
     onDelete,
-    onToggleIncrease,
-    onToggleRise,
+    onToggleProp,
     increase,
     rise,
   } = props;
@@ -23,7 +22,11 @@ const EmployeersListItem = (props) => {
 
   return (
     <li className={classNames}>
-      <span onClick={onToggleRise} className="list-group-item-label">
+      <span
+        onClick={onToggleProp}
+        data-toggle="rise"
+        className="list-group-item-label"
+      >
         {name}
       </span>
       <input
@@ -33,7 +36,8 @@ const EmployeersListItem = (props) => {
       />
       <div className="d-flex justify-content-center align-items-center">
         <button
-          onClick={onToggleIncrease}
+          onClick={onToggleProp}
+          data-toggle="increase"
           type="button"
           className="btn-cookie btn-sm "
         >
